@@ -6,6 +6,10 @@ function generateGrid() {
       const gridSquare = document.createElement('div')
       gridSquare.setAttribute('class', 'grid-square')
       divGrid.appendChild(gridSquare)
+
+      gridSquare.addEventListener('mouseover', () => {
+        gridSquare.style.backgroundColor = 'rgb(255, 0, 255)'
+      })
     }
   }
 }
