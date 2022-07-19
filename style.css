@@ -1,0 +1,9 @@
+.grid {
+  display: grid;
+}
+
+.grid-square {
+  background-color: blueviolet;
+  width: 10px;
+  height: 10px;
+}
