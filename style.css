@@ -1,9 +1,14 @@
 .grid {
+  width: 320px;
+  height: 320px;
   display: grid;
+  grid-template-columns: repeat(32, 1fr);
+
+  border: 3px solid rgba(0, 0, 0, 1);
 }
 
 .grid-square {
-  background-color: blueviolet;
+  background-color: rgb(194, 194, 194);
   width: 10px;
   height: 10px;
 }
