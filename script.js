@@ -14,4 +14,18 @@ function generateGrid() {
   }
 }
 
+function resetGrid() {
+  const gridSquare = document.querySelectorAll('.grid-square')
+  
+  for(let i = 0; i < gridSquare.length; i++){
+    gridSquare[i].style.backgroundColor = 'rgb(0, 0, 0)'
+  }
+}
+
 generateGrid()
+
+const resetButton = document.querySelector('#reset')
+
+resetButton.addEventListener('click', () => {
+  resetGrid()
+})
