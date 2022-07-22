@@ -1,5 +1,5 @@
 const divGrid = document.querySelector('.grid')
-const initialColor = `#000000`
+const initialColor = `#FFFFFF`
 
 function generateGrid() {
   for (let r = 0; r < 32; r++) {
@@ -24,7 +24,7 @@ function changeColor(colorValue){
   const gridSquare = document.querySelectorAll('.grid-square')
 
   for(let i = 0; i < gridSquare.length; i++){
-    gridSquare[i].addEventListener('mouseover', () => {
+    gridSquare[i].addEventListener('click', () => {
       gridSquare[i].style.backgroundColor = colorValue
     })
   }
@@ -32,8 +32,12 @@ function changeColor(colorValue){
 
 generateGrid()
 
-let colorPicker = document.querySelector('#color-picker');
+const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')
+const gridSquare = document.querySelectorAll('.grid-square')
+const eraser = document.querySelector('#eraser')
+
+changeColor(colorPicker.value)
 
 resetButton.addEventListener('click', () => {
   resetGrid()
@@ -41,4 +45,8 @@ resetButton.addEventListener('click', () => {
 
 colorPicker.addEventListener('input', () => {
   changeColor(colorPicker.value)
+})
+
+eraser.addEventListener('click', () => {
+  changeColor(initialColor)
 })
