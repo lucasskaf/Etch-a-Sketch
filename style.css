@@ -72,6 +72,10 @@ i {
   border-radius: 25px;
 }
 
+.selected {
+  background-color: rgb(77, 106, 129);
+}
+
 .grid {
   width: 320px;
   height: 320px;

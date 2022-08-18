@@ -57,10 +57,14 @@ colorPicker.addEventListener('input', e => {
 })
 
 pencil.addEventListener('click', e => {
+  pencil.classList.add('selected')
+  eraser.classList.remove('selected')
   drawColor(initialColor, colorPicker.value)
 })
 
 eraser.addEventListener('click', () => {
+  eraser.classList.add('selected')
+  pencil.classList.remove('selected')
   drawColor(initialColor, initialColor)
 })
 
