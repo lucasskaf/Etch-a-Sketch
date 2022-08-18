@@ -12,6 +12,19 @@ input {
   border: none;
 }
 
+button {
+  display: block;
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+
+  width: 150px;
+
+  background-color: rgb(121, 162, 196);
+  border-radius: 10px;
+}
+
 .grid {
   width: 320px;
   height: 320px;
@@ -31,14 +44,18 @@ input {
   justify-content: center;
   align-items: center;
 
-  width: 200px;
+  width: 150px;
 
   background-color: rgb(121, 162, 196);
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 #colorpicker label{
   padding-right: 0.5rem;
+}
+
+#colorpicker input {
+  cursor: pointer;
 }
 
 #reset {
