@@ -19,26 +19,30 @@
     <title>Etch-a-Sketch</title>
   </head>
   <body>
-    <div id="selection-items">
-      <div id="colorpicker">
-        <label for="color-picker">Color:</label>
-        <input type="color" id="color-picker" name="color-picker">
-      </div>
-  
-      <div id="tools">
-        <button id="pencil">
-          <i class="bi-pencil"></i>
-        </button>
-        <button id="eraser">
-          <i class="bi-eraser"></i>
-        </button>
-      </div>
-      
-      <button id="reset">Reset</button>
-    </div>
-    
-    <div class="grid"></div>
+    <div id="content">
+      <!-- Grid -->
+      <div class="grid"></div>
 
+      <!-- Menu -->
+      <div id="selection-items">
+        <div id="colorpicker">
+          <label for="color-picker">Color:</label>
+          <input type="color" id="color-picker" name="color-picker">
+        </div>
+    
+        <div id="tools">
+          <button id="pencil">
+            <i class="bi-pencil"></i>
+          </button>
+          <button id="eraser">
+            <i class="bi-eraser"></i>
+          </button>
+        </div>
+        
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  
     <script src="script.js"></script>
   </body>
 </html>
