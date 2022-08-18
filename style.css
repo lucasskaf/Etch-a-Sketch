@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   color: rgba(255, 255, 255, 1);
@@ -41,6 +42,16 @@ i {
   font-weight: 700;
 }
 
+#content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  gap: 25px;
+}
+
 .tools {
   display: flex;
 }
@@ -52,9 +63,11 @@ i {
   justify-content: center;
   align-items: center;
 
+  height: 175px;
   width: 175px;
 
   background-color: rgb(177, 220, 255);
+  box-shadow: -2px -2px 24px -7px rgba(0,0,0,0.69);
   padding: 25px;
   border-radius: 25px;
 }
