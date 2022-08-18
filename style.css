@@ -13,16 +13,43 @@ input {
 }
 
 button {
-  display: block;
+  display: inline-block;
 
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   color: rgba(255, 255, 255, 1);
 
-  width: 150px;
+  width: 75px;
 
   background-color: rgb(121, 162, 196);
-  border-radius: 10px;
+  border-radius: 7px;
+
+  box-shadow: none;
+  border: none;
+
+  margin-top: 20px;
+}
+
+button:hover{
+  background-color: rgb(77, 106, 129);
+  cursor: pointer;
+}
+
+i {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.tools {
+  display: flex;
+}
+
+#selection-items {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .grid {
@@ -59,5 +86,9 @@ button {
 }
 
 #reset {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  width: 150px;
   cursor: pointer;
 }
