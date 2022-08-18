@@ -27,7 +27,7 @@ function resetGrid(initialColor) {
   }
 }
 
-function hoverColor(initialColor, colorValue){
+function drawColor(initialColor, colorValue){
   const gridSquare = document.querySelectorAll('.grid-square')
 
   for(let i = 0; i < gridSquare.length; i++){
@@ -35,16 +35,6 @@ function hoverColor(initialColor, colorValue){
       if(isMousePressed){
         gridSquare[i].style.backgroundColor = colorValue
       }
-    })
-  }
-}
-
-function changeColor(colorValue){
-  const gridSquare = document.querySelectorAll('.grid-square')
-
-  for(let i = 0; i < gridSquare.length; i++){
-    gridSquare[i].addEventListener('click', () => {
-      gridSquare[i].style.backgroundColor = colorValue
     })
   }
 }
@@ -61,26 +51,17 @@ const gridSquare = document.querySelectorAll('.grid-square')
 const eraser = document.querySelector('#eraser')
 const pencil = document.getElementById('pencil')
 
-// changeColor(colorPicker.value)
-
-// colorPicker.addEventListener('input', () => {
-//   color = colorPicker.value
-// })
-
 colorPicker.addEventListener('input', e => {
-  hoverColor(initialColor, colorPicker.value)
+  drawColor(initialColor, colorPicker.value)
   console.log(e)
 })
 
 pencil.addEventListener('click', e => {
-  hoverColor(initialColor, colorPicker.value)
-  // changeColor(colorPicker.value)
-  console.log(e)
+  drawColor(initialColor, colorPicker.value)
 })
 
 eraser.addEventListener('click', () => {
-  hoverColor(initialColor, initialColor)
-  // changeColor(initialColor)
+  drawColor(initialColor, initialColor)
 })
 
 resetButton.addEventListener('click', () => {
