@@ -50,6 +50,12 @@ i {
 
   justify-content: center;
   align-items: center;
+
+  width: 175px;
+
+  background-color: rgb(177, 220, 255);
+  padding: 25px;
+  border-radius: 25px;
 }
 
 .grid {
