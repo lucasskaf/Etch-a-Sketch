@@ -14,8 +14,8 @@ function generateGrid(divGrid, initialColor, size) {
   divGrid.style.setProperty('grid-template-columns', 'repeat(' + size + ', 1fr)')
   divGrid.style.setProperty('grid-template-rows', 'repeat(' + size + ', 1fr)')
 
-  for (let r = 0; r < size; r++) { // 32
-    for (let c = 0; c < size; c++) { // 32
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
       const gridSquare = document.createElement('div')
       gridSquare.setAttribute('class', 'grid-square')
       gridSquare.style.backgroundColor = initialColor;
@@ -24,13 +24,7 @@ function generateGrid(divGrid, initialColor, size) {
   }
 }
 
-function resetElementsGrid(divGrid){
-  while(divGrid.firstChild){
-    divGrid.removeChild(divGrid.firstChild)
-  }
-}
-
-function resetGrid(initialColor) {
+function resetGrid(initialColor) { // Resets grids to initialColor
   const gridSquare = document.querySelectorAll('.grid-square')
   
   for(let i = 0; i < gridSquare.length; i++){
@@ -50,6 +44,7 @@ function drawColor(initialColor, colorValue){
   }
 }
 
+// HTML Selectors
 const startButton = document.getElementById('start')
 const size32Button = document.getElementById('size-32')
 const size50Button = document.getElementById('size-50')
@@ -66,16 +61,6 @@ size32Button.addEventListener('click', () => {
   size32Button.classList.add('selected')
   size50Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
-
-  // if(!oneCanvasOptionPressed){
-  //   resetElementsGrid(divGrid)
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
-  // else{
-  //   oneCanvasOptionPressed = true
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
-  
 })
 
 size50Button.addEventListener('click', () => {
@@ -83,15 +68,6 @@ size50Button.addEventListener('click', () => {
   size50Button.classList.add('selected')
   size32Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
-
-  // if(!oneCanvasOptionPressed){
-  //   resetElementsGrid(divGrid)
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
-  // else{
-  //   oneCanvasOptionPressed = true
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
 })
 
 sizeCustomButton.addEventListener('click', () => {
@@ -99,15 +75,6 @@ sizeCustomButton.addEventListener('click', () => {
   sizeCustomButton.classList.add('selected')
   size50Button.classList.remove('selected')
   size32Button.classList.remove('selected')
-
-  // if(!oneCanvasOptionPressed){
-  //   resetElementsGrid(divGrid)
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
-  // else{
-  //   oneCanvasOptionPressed = true
-  //   generateGrid(divGrid, initialColor, canvasSize)
-  // }
 })
 
 startButton.addEventListener('click', () => {
@@ -123,10 +90,11 @@ startButton.addEventListener('click', () => {
   contentContainer.style.setProperty('display', 'flex')
 })
 
-
+// Array to save palette of colors
 const arrayOfColors = []
 let colorPosition = 0
 
+// HTML Selectors
 const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')
 const gridSquare = document.querySelectorAll('.grid-square')
