@@ -58,6 +58,7 @@ const startButton = document.getElementById('start')
 const size32Button = document.getElementById('size-32')
 const size50Button = document.getElementById('size-50')
 const sizeCustomButton = document.getElementById('size-custom')
+const initialColorPicker = document.querySelector('#initial-color-selector')
 
 size32Button.addEventListener('click', () => {
   canvasSize = 32
@@ -65,16 +66,14 @@ size32Button.addEventListener('click', () => {
   size50Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
 
-  const divGrid = document.querySelector('.grid')
-
-  if(!oneCanvasOptionPressed){
-    resetElementsGrid(divGrid)
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
-  else{
-    oneCanvasOptionPressed = true
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
+  // if(!oneCanvasOptionPressed){
+  //   resetElementsGrid(divGrid)
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
+  // else{
+  //   oneCanvasOptionPressed = true
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
   
 })
 
@@ -84,16 +83,14 @@ size50Button.addEventListener('click', () => {
   size32Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
 
-  const divGrid = document.querySelector('.grid')
-
-  if(!oneCanvasOptionPressed){
-    resetElementsGrid(divGrid)
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
-  else{
-    oneCanvasOptionPressed = true
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
+  // if(!oneCanvasOptionPressed){
+  //   resetElementsGrid(divGrid)
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
+  // else{
+  //   oneCanvasOptionPressed = true
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
 })
 
 sizeCustomButton.addEventListener('click', () => {
@@ -102,19 +99,22 @@ sizeCustomButton.addEventListener('click', () => {
   size50Button.classList.remove('selected')
   size32Button.classList.remove('selected')
 
-  const divGrid = document.querySelector('.grid')
-
-  if(!oneCanvasOptionPressed){
-    resetElementsGrid(divGrid)
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
-  else{
-    oneCanvasOptionPressed = true
-    generateGrid(divGrid, initialColor, canvasSize)
-  }
+  // if(!oneCanvasOptionPressed){
+  //   resetElementsGrid(divGrid)
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
+  // else{
+  //   oneCanvasOptionPressed = true
+  //   generateGrid(divGrid, initialColor, canvasSize)
+  // }
 })
 
 startButton.addEventListener('click', () => {
+  const divGrid = document.querySelector('.grid')
+
+  initialColor = initialColorPicker.value
+  generateGrid(divGrid, initialColor, canvasSize)
+
   const modalContainer = document.getElementById('modal-container')
   const contentContainer = document.getElementById('content')
 
@@ -125,8 +125,6 @@ startButton.addEventListener('click', () => {
 
 const arrayOfColors = []
 let colorPosition = 0
-
-
 
 const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')
