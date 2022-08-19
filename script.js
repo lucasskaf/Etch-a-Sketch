@@ -9,8 +9,8 @@ document.body.addEventListener('mouseup', () => {
 })
 
 function generateGrid(divGrid, initialColor) {
-  for (let r = 0; r < 32; r++) {
-    for (let c = 0; c < 32; c++) {
+  for (let r = 0; r < 32; r++) { // 32
+    for (let c = 0; c < 32; c++) { // 32
       const gridSquare = document.createElement('div')
       gridSquare.setAttribute('class', 'grid-square')
       gridSquare.style.backgroundColor = initialColor;
@@ -41,6 +41,7 @@ function drawColor(initialColor, colorValue){
 
 let initialColor = `#FFFFFF`
 const arrayOfColors = []
+let colorPosition = 0
 
 const divGrid = document.querySelector('.grid')
 
@@ -64,6 +65,27 @@ plusColor.addEventListener('click', () => {
     arrayOfColors.push(colorPicker.value)
     let newColorDiv = document.createElement('div')
     newColorDiv.setAttribute('id', `color-${arrayOfColors.length}`)
+    newColorDiv.style.backgroundColor = colorPicker.value
+
+    newColorDiv.addEventListener('click', () => {
+      if(newColorDiv.getAttribute('id') == 'color-1'){
+        colorPicker.value = arrayOfColors[0]
+        drawColor(initialColor, colorPicker.value)
+      }
+      else if(newColorDiv.getAttribute('id') == 'color-2'){
+        colorPicker.value = arrayOfColors[1]
+        drawColor(initialColor, colorPicker.value)
+      }
+      else if(newColorDiv.getAttribute('id') == 'color-3'){
+        colorPicker.value = arrayOfColors[2]
+        drawColor(initialColor, colorPicker.value)
+      }
+      else if(newColorDiv.getAttribute('id') == 'color-4'){
+        colorPicker.value = arrayOfColors[3]
+        drawColor(initialColor, colorPicker.value)
+      }
+      
+    })
 
     palette.appendChild(newColorDiv)
   }

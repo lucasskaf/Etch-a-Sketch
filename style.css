@@ -126,6 +126,7 @@ i {
   background-color: aliceblue;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 #reset {
