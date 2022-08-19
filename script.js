@@ -8,9 +8,14 @@ document.body.addEventListener('mouseup', () => {
   isMousePressed = false;
 })
 
-function generateGrid(divGrid, initialColor) {
-  for (let r = 0; r < 32; r++) { // 32
-    for (let c = 0; c < 32; c++) { // 32
+function generateGrid(divGrid, initialColor, size) {
+  divGrid.style.width = `${size * 10}px`
+  divGrid.style.height = `${size * 10}px`
+  divGrid.style.setProperty('grid-template-columns', 'repeat(' + size + ', 1fr)')
+  divGrid.style.setProperty('grid-template-rows', 'repeat(' + size + ', 1fr)')
+
+  for (let r = 0; r < size; r++) { // 32
+    for (let c = 0; c < size; c++) { // 32
       const gridSquare = document.createElement('div')
       gridSquare.setAttribute('class', 'grid-square')
       gridSquare.style.backgroundColor = initialColor;
@@ -45,7 +50,7 @@ let colorPosition = 0
 
 const divGrid = document.querySelector('.grid')
 
-generateGrid(divGrid, initialColor)
+generateGrid(divGrid, initialColor, 50)
 
 const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')

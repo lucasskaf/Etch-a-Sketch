@@ -76,10 +76,7 @@ i {
 }
 
 .grid {
-  width: 320px;
-  height: 320px;
   display: grid;
-  grid-template-columns: repeat(32, 1fr);
 
   border: 3px solid rgba(0, 0, 0, 1);
 }
