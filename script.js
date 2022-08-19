@@ -24,6 +24,12 @@ function generateGrid(divGrid, initialColor, size) {
   }
 }
 
+function resetElementsGrid(divGrid){
+  while(divGrid.firstChild){
+    divGrid.removeChild(divGrid.firstChild)
+  }
+}
+
 function resetGrid(initialColor) {
   const gridSquare = document.querySelectorAll('.grid-square')
   
@@ -46,17 +52,81 @@ function drawColor(initialColor, colorValue){
 
 let initialColor = `#FFFFFF`
 let canvasSize = 0
+let oneCanvasOptionPressed = false
 
+const startButton = document.getElementById('start')
+const size32Button = document.getElementById('size-32')
+const size50Button = document.getElementById('size-50')
+const sizeCustomButton = document.getElementById('size-custom')
 
+size32Button.addEventListener('click', () => {
+  canvasSize = 32
+  size32Button.classList.add('selected')
+  size50Button.classList.remove('selected')
+  sizeCustomButton.classList.remove('selected')
 
+  const divGrid = document.querySelector('.grid')
+
+  if(!oneCanvasOptionPressed){
+    resetElementsGrid(divGrid)
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+  else{
+    oneCanvasOptionPressed = true
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+  
+})
+
+size50Button.addEventListener('click', () => {
+  canvasSize = 50
+  size50Button.classList.add('selected')
+  size32Button.classList.remove('selected')
+  sizeCustomButton.classList.remove('selected')
+
+  const divGrid = document.querySelector('.grid')
+
+  if(!oneCanvasOptionPressed){
+    resetElementsGrid(divGrid)
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+  else{
+    oneCanvasOptionPressed = true
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+})
+
+sizeCustomButton.addEventListener('click', () => {
+  canvasSize = prompt('Please indicate size (only 1 number):')
+  sizeCustomButton.classList.add('selected')
+  size50Button.classList.remove('selected')
+  size32Button.classList.remove('selected')
+
+  const divGrid = document.querySelector('.grid')
+
+  if(!oneCanvasOptionPressed){
+    resetElementsGrid(divGrid)
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+  else{
+    oneCanvasOptionPressed = true
+    generateGrid(divGrid, initialColor, canvasSize)
+  }
+})
+
+startButton.addEventListener('click', () => {
+  const modalContainer = document.getElementById('modal-container')
+  const contentContainer = document.getElementById('content')
+
+  modalContainer.style.setProperty('display', 'none')
+  contentContainer.style.setProperty('display', 'flex')
+})
 
 
 const arrayOfColors = []
 let colorPosition = 0
 
-const divGrid = document.querySelector('.grid')
 
-generateGrid(divGrid, initialColor, canvasSize)
 
 const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')
