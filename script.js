@@ -45,12 +45,18 @@ function drawColor(initialColor, colorValue){
 }
 
 let initialColor = `#FFFFFF`
+let canvasSize = 0
+
+
+
+
+
 const arrayOfColors = []
 let colorPosition = 0
 
 const divGrid = document.querySelector('.grid')
 
-generateGrid(divGrid, initialColor, 50)
+generateGrid(divGrid, initialColor, canvasSize)
 
 const colorPicker = document.querySelector('#color-picker');
 const resetButton = document.querySelector('#reset')

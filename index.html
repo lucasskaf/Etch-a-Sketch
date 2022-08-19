@@ -19,6 +19,31 @@
     <title>Etch-a-Sketch</title>
   </head>
   <body>
+    <div id="modal-container">
+      <div id="modal">
+        <img src="assets/etch-a-sketch-logo.png" alt="etch-a-sketch-logo">
+
+        <div id="options">
+          <div id="sizes-container">
+            <p>Select desired canvas' size:</p>
+            <div id="sizes-buttons">
+              <button id="size-32">32x32</button>
+              <button id="size-50">50x50</button>
+              <button id="size-custom">Custom</button>
+            </div>
+          </div>
+  
+          <div id="initial-color-selector">
+            <label for="initial-color-selector">Select desired canvas' color:</label>
+            <input type="color" id="initial-color-selector" name="initial-color-selector">
+          </div>
+        </div>
+
+        <button id="start">Start!</button>
+      </div>
+    </div>
+
+
     <div id="content">
       <!-- Grid -->
       <div class="grid"></div>

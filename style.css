@@ -6,6 +6,19 @@ body {
   background-color: rgb(214, 214, 214);
 }
 
+p {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 20px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
 input {
   width: 2rem;
   height: 2rem;
@@ -42,8 +55,76 @@ i {
   font-weight: 700;
 }
 
-#content {
+#modal-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+#modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#options #sizes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#options #sizes-container #sizes-buttons button {
+  width: 100px;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+
+  font-size: 20px;
+}
+
+
+#options #initial-color-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#options #initial-color-selector label {
+  font-size: 20px;
+}
+
+#start {
+  width: 100px;
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+
+  background-color: rgb(21, 134, 227);
+
+  font-size: 20px;
+}
+
+#start:hover {
+  background-color: rgb(12, 81, 137);
+}
+
+#content {
+  /* CHANGE TO FLEX */
+  display: none;
   align-items: center;
   justify-content: center;
 
