@@ -50,15 +50,16 @@ function drawColor(initialColor, colorValue){
   }
 }
 
-let initialColor = `#FFFFFF`
-let canvasSize = 0
-let oneCanvasOptionPressed = false
-
 const startButton = document.getElementById('start')
 const size32Button = document.getElementById('size-32')
 const size50Button = document.getElementById('size-50')
 const sizeCustomButton = document.getElementById('size-custom')
 const initialColorPicker = document.querySelector('#initial-color-selector')
+
+let initialColor = `#FFFFFF`
+initialColorPicker.value = initialColor
+let canvasSize = 0
+let oneCanvasOptionPressed = false
 
 size32Button.addEventListener('click', () => {
   canvasSize = 32
