@@ -68,6 +68,11 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-color: rgb(177, 220, 255);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: -2px -2px 24px -7px rgba(0,0,0,0.69);
 }
 
 #options {
@@ -95,14 +100,14 @@ i {
 }
 
 
-#options #initial-color-selector {
+#options #initial-color-selector-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-#options #initial-color-selector label {
+#options #initial-color-selector-container label {
   font-size: 20px;
 }
 
