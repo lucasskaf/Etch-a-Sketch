@@ -99,6 +99,10 @@ i {
   font-size: 20px;
 }
 
+#warning {
+  color: rgb(204, 0, 0);
+}
+
 
 #options #initial-color-selector-container {
   display: flex;

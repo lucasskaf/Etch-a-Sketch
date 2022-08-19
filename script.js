@@ -44,6 +44,8 @@ function drawColor(initialColor, colorValue){
   }
 }
 
+// ==== INITIAL MENU ====
+
 // HTML Selectors
 const startButton = document.getElementById('start')
 const size32Button = document.getElementById('size-32')
@@ -54,10 +56,11 @@ const initialColorPicker = document.querySelector('#initial-color-selector')
 let initialColor = `#FFFFFF`
 initialColorPicker.value = initialColor
 let canvasSize = 0
-let oneCanvasOptionPressed = false
+let canvasSizeSelected = false
 
 size32Button.addEventListener('click', () => {
   canvasSize = 32
+  canvasSizeSelected = true
   size32Button.classList.add('selected')
   size50Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
@@ -65,30 +68,48 @@ size32Button.addEventListener('click', () => {
 
 size50Button.addEventListener('click', () => {
   canvasSize = 50
+  canvasSizeSelected = true
   size50Button.classList.add('selected')
   size32Button.classList.remove('selected')
   sizeCustomButton.classList.remove('selected')
 })
 
 sizeCustomButton.addEventListener('click', () => {
-  canvasSize = prompt('Please indicate size (only 1 number):')
-  sizeCustomButton.classList.add('selected')
-  size50Button.classList.remove('selected')
-  size32Button.classList.remove('selected')
+  let inputSize = prompt('Please indicate size (only 1 number, between 2 and 100):')
+  let sizesContainer = document.getElementById('sizes-container')
+
+  if(!(inputSize >= 2 && inputSize <= 100)){
+    alert('Try again and select a value between 2 and 100')
+  }
+  else{
+    canvasSize = inputSize
+    canvasSizeSelected = true
+
+    sizeCustomButton.classList.add('selected')
+    size50Button.classList.remove('selected')
+    size32Button.classList.remove('selected')
+  }
 })
 
 startButton.addEventListener('click', () => {
-  const divGrid = document.querySelector('.grid')
+  if(canvasSizeSelected){
+    const divGrid = document.querySelector('.grid')
 
-  initialColor = initialColorPicker.value
-  generateGrid(divGrid, initialColor, canvasSize)
-
-  const modalContainer = document.getElementById('modal-container')
-  const contentContainer = document.getElementById('content')
-
-  modalContainer.style.setProperty('display', 'none')
-  contentContainer.style.setProperty('display', 'flex')
+    initialColor = initialColorPicker.value
+    generateGrid(divGrid, initialColor, canvasSize)
+  
+    const modalContainer = document.getElementById('modal-container')
+    const contentContainer = document.getElementById('content')
+  
+    modalContainer.style.setProperty('display', 'none')
+    contentContainer.style.setProperty('display', 'flex')
+  }
+  else{
+    alert('Please select a canvas size.')
+  }
 })
+
+// ==== CANVAS MENU ====
 
 // Array to save palette of colors
 const arrayOfColors = []
