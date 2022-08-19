@@ -63,7 +63,6 @@ i {
   justify-content: center;
   align-items: center;
 
-  height: 175px;
   width: 175px;
 
   background-color: rgb(177, 220, 255);
@@ -109,6 +108,11 @@ i {
 
 #colorpicker input {
   cursor: pointer;
+}
+
+#save-color {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 #palette {
