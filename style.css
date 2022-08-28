@@ -137,7 +137,7 @@ i {
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
+  height: 95vh;
 
   gap: 25px;
 }
@@ -222,4 +222,14 @@ i {
 
   width: 150px;
   cursor: pointer;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  font-weight: 400;
+  color: rgba(0, 0,0, 1);
 }
